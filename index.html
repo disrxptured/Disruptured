@@ -3,45 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Especial</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+    <title> </title> <style>
+        body, html {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5; /* Color de fondo suave */
-            text-align: center;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
+
         img {
-            max-width: 80%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: none; /* Escondida hasta que hagas clic */
         }
-        h1 {
-            color: #333;
-            margin-top: 20px;
-        }
+
         audio {
-            margin-top: 20px;
+            display: none;
         }
     </style>
 </head>
-<body>
+<body onclick="entrar()">
 
-    <img src="tu-imagen.jpg" alt="Imagen principal">
+    <img id="foto" src="foto.jpg">
 
-    <h1>Bienvenido a mi página</h1>
-    <p>Este es el texto que querías poner. ¡Espero que te guste!</p>
-
-    <audio controls autoplay>
-        <source src="tu-musica.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
     </audio>
+
+    <script>
+        function entrar() {
+            var img = document.getElementById("foto");
+            var audio = document.getElementById("musica");
+            
+            img.style.display = "block"; // Muestra la imagen
+            audio.play(); // Suena la música
+        }
+    </script>
 
 </body>
 </html>
